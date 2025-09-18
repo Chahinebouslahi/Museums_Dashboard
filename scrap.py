@@ -3,11 +3,11 @@ import os
 import requests
 import xlsxwriter
 import pandas as pd
-
 doc=requests.get("https://fr.wikipedia.org/wiki/Liste_des_mus%C3%A9es_d%27art_les_plus_visit%C3%A9s_au_monde")
 page=doc.content
 #recupération du contenu HTML
 scrap=BeautifulSoup(page,'lxml')
+
 museums=[]
 #recherche des informations
 tab=scrap.find('table',{'class': 'wikitable'})
